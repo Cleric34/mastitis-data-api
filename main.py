@@ -24,7 +24,7 @@ class Cow(Base):
     rfid_uid: Mapped[str] = mapped_column(String(64), primary_key=True)
     cow_id: Mapped[str] = mapped_column(String(64), index=True)
     device_id: Mapped[str] = mapped_column(String(64))
-    registered_at_device: Mapped[Optional[str]] = mapped_column(String(64), nullable=True)
+    registered_at_device: Mapped[str] = mapped_column(String(64), nullable=True)
     received_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
 
 class TestRecord(Base):
@@ -39,8 +39,8 @@ class TestRecord(Base):
     ec: Mapped[float] = mapped_column(Float)
     ph: Mapped[float] = mapped_column(Float)
     temperature: Mapped[float] = mapped_column(Float)
-    timestamp_device: Mapped[Optional[str]] = mapped_column(String(64), nullable=True)
-    sequence_id: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    timestamp_device: Mapped[str] = mapped_column(String(64), nullable=True)
+    sequence_id: Mapped[int] = mapped_column(Integer, nullable=True)
     time_source: Mapped[str] = mapped_column(String(16))
     delivery_mode: Mapped[str] = mapped_column(String(16))
     received_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
